@@ -1,0 +1,15 @@
+name: Report to Moodle Workflow incl Linter
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  checks: write
+  actions: write
+  contents: read
+
+jobs:
+  call-lint:
+    uses: BZZ-Commons/htmlgrader/.github/workflows/workflow.yml@main
+    secrets: inherit
